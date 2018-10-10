@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>图片显示隐藏</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+        <input type="button" id="btn" value="点我隐藏" />
+        <br><br>
+        <img id="pic" style="display: block;" src="img/3.jpg" >
+      <script type="text/javascript">
+          var btn = document.getElementById("btn");
+          var pic = document.getElementById("pic");
+          var  sty = 1
+          
+          btn.onclick = function(){ 
+              if (sty == 1) {
+                    pic.style.display = "none";
+                    btn.value = "点我显示";
+                    sty = 2;
+              }else{
+                  pic.style.display = "block";
+                  btn.value = "点我隐藏";
+                  sty = 1;
+              }
+              
+          }
+      </script>
+	</body>
+</html>

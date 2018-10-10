@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>构造函数创建对象</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script type="text/javascript">
+                //创建构造函数
+                function qiche(){
+                    this.color = "红色";
+                    this.size = "4箱";
+                    this.qudong = "四驱车";
+                    this.fangxiangpan = function(){
+                        document.write("前后左右方向转换");
+                    };
+                    this.kaiguan = function(){
+                        document.write("开车");
+                        document.write("停车");
+                    }
+                };
+                //创建对象
+                var jeep = new qiche();
+                document.write(jeep.size+"<br />");
+                var xiali = new qiche();
+                //修改属性方法
+                 xiali.color = "银色";
+                //增加属性和方法
+                xiali.you = function(){
+                    document.write("烧油+烧电强力加速");
+                }
+                xiali.you();
+                document.write("<br />")
+                document.write(jeep.color+"<br />");
+                document.write(xiali.color+"<br />");
+		</script>
+	</body>
+</html>

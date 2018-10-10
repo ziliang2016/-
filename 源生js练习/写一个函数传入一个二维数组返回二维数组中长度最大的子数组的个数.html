@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>写一个函数，传入一个二维数组，返回二维数组中长度最大的子数组的个数</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+            <script type="text/javascript">
+                    function index(arr){
+                        var  nub = arr[0].length;
+                        for (var i=0; i<arr.length; i++) {
+                            if (nub < arr[i].length) {
+                            	 nub =  arr[i].length;
+                            }
+                        }
+                        return nub;
+                    }
+                    var jingdian = [['狼牙山','白洋淀','北戴河'],['少林寺','嵩山','龙门石窟','白马寺'],['泰山','大明湖','趵突泉','梁山','沂蒙山','三孔'],['平遥古城','五台山']];
+                    var re = index(jingdian);
+                    document.write(re);
+            </script>
+	</body>
+</html>

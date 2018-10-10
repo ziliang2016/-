@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>倒计时效果</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+    <h2 id="time1">现在时间是:&nbsp;<span>0</span>年<span>0</span>月<span>0</span>日
+    <span>0</span>时<span>0</span>分<span>0</span>秒</h2>
+    <h2 id="time2">距离过年时间还有:&nbsp;<span>0</span>天<span>0</span>时<span>0</span>分<span>0</span>秒</h2>
+      <script type="text/javascript">
+          var  time1 = document.getElementById("time1");
+          var  time1_span = time1.getElementsByTagName("span");
+          var  time2 = document.getElementById("time2");
+          var  time2_span = time2.getElementsByTagName("span");
+          djs();
+          setInterval(djs,1000);
+          //倒计时函数
+          function djs(){
+            //获取当前时间
+            var  time = new Date();
+            //换算当前时间
+            time1_span[0].innerHTML = time.getFullYear();
+            time1_span[1].innerHTML = time.getMonth()+1;
+            time1_span[2].innerHTML = time.getDate();
+            time1_span[3].innerHTML = time.getHours();
+            time1_span[4].innerHTML = time.getMinutes();
+            time1_span[5].innerHTML = time.getSeconds();
+            //创建指定时间
+            var  time_new = new  Date(2019,1,4,0,0,0);
+            //计算剩余时间
+            var new_time = time_new.getTime() - time.getTime();
+            //转换时间格式
+            //计算天数
+            var  tian = parseInt(new_time/(24*60*60*1000));
+            //计算完天数后剩余的毫秒数
+            new_time = new_time%(24*60*60*1000);
+            //计算小时数
+            var  shi = parseInt(new_time/(60*60*1000));
+            //计算完小时数后剩余的毫秒数
+            new_time = new_time%(60*60*1000);
+            //计算分钟数
+            var  fen = parseInt(new_time/(60*1000));
+            //计算完分钟数后剩余的毫秒数
+            new_time = new_time%(60*1000);
+            //计算秒数
+            var  miao = parseInt(new_time/(1000));  
+             time2_span[0].innerHTML = tian;
+             time2_span[1].innerHTML = shi;
+             time2_span[2].innerHTML = fen;
+             time2_span[3].innerHTML = miao;
+          }
+      </script>
+	</body>
+</html>

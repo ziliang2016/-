@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>自定义函数输出倒三角</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+            <script type="text/javascript">
+                    function  dsj(str){
+                        for (var i=0; i<15; i++) {
+                        		for (var k=0; k<i; k++) {
+                                        document.write(str);
+                        		}
+                        		document.write("<br />");
+                        }
+                    }
+                    //dsj("卍");
+                    var  nub = prompt("请输入倒三角的个数");
+                    for (var i=0; i<=nub; i++) {
+                    	dsj("卍");
+                    }
+            </script>
+	</body>
+</html>

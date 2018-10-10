@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>冒泡排序</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+        <p>作业：写一个函数，传入一个数组，返回数组排序的结果</p>
+        
+		<script type="text/javascript">
+                function paixu(arr){
+                    for (var i=0; i<arr.length-1; i++) {
+                        for (var k=0; k<arr.length-1; k++) {
+                            if (arr[k] > arr[k+1]) {
+                                var temp = arr[k];
+                                arr[k] = arr[k+1];
+                                arr[k+1] = temp;
+                            }
+                        }                    	
+                    }
+                    return arr
+                }
+                
+                var shuzu = [10,75,44,32,30,7];
+                var re = paixu(shuzu);
+                document.write(re);
+		</script>
+	</body>
+</html>

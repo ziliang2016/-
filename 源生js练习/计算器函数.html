@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>计算器函数</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+            <script type="text/javascript">
+                    var  $x = prompt("请输入第一个数")*1;
+                    var  $y = prompt("请输入第二个数")*1;
+                    var  $fuhao  = prompt("请输入运算符号:例如“+、-、*、/、%”");   
+                    
+                    document.write("<h1>这是简易计算器属于dome测试</h1>");
+                    
+                    function  jisaunqi(x,y){                        
+                        switch ($fuhao){
+                        	case "+":
+                                var  $jieguo = x+y;
+                        		break;
+                            case "-":
+                                var  $jieguo = x-y;
+                                break;
+                            case "*":
+                                var  $jieguo = x*y;
+                                break;
+                            case "/":
+                                var  $jieguo = x/y;
+                                break;
+                            case "%":
+                                var  $jieguo = x%y;
+                                break;
+                        	default: document.write("请输入合法的运算符号");
+                        		break;
+                        } 
+                        return $jieguo;
+                    }
+                    var  $jieguo = jisaunqi($x,$y);
+                    document.write("<table boder='1'>");
+                    document.write("<tr>");
+                    document.write("<td>");
+                    document.write($x);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write($fuhao);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write($y);
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write("=");
+                    document.write("</td>");                     
+                    document.write("<td>");
+                    document.write($jieguo);
+                    document.write("</td>");                    
+                    document.write("</tr>");
+                    document.write("</table>")
+            </script>
+		
+	</body>
+</html>

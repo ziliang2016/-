@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>轮播图效果</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    	*{margin: 0; padding: 0;}
+      #box{width: 500px; height: 300px; position: relative; margin: 20px auto;}
+      #box img{position: absolute; top: 0; left: 0; display: none;}
+      .zuoyou{width: 50px; height: 50px; position: absolute; top: 50%; margin-top: -5%;}
+      #left{left: 1px; background: url(img/left.png);}
+      #right{right: 1px; background: url(img/right.png);}
+      #ul {width: auto; position: absolute; left: 50%; bottom: 10px; margin-left: -5%;}
+      #ul li{list-style: none; width: 15px; height: 15px; background: red; margin-right: 5px; float: left; border-radius: 50%;}
+    </style>
+	</head>
+	<body>
+    <div id="box">
+        <img src="img/l1.jpg" style="display: block;">
+        <img src="img/l2.jpg">
+        <img src="img/l3.jpg">
+        <img src="img/l4.jpg">
+        <div id="left" class="zuoyou"></div>
+        <div id="right" class="zuoyou"></div>
+        <ul id="ul">
+        	<li style="background: lightskyblue;"></li>
+        	<li></li>
+        	<li></li>
+        	<li></li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        //抓元素
+        var  box = document.getElementById("box");
+        var  imgs = box.getElementsByTagName("img");
+        var  left = document.getElementById("left");
+        var  right = document.getElementById("right");
+        var  ul = document.getElementById("ul");
+        var  lis = ul.getElementsByTagName("li");
+        var  c = 0;
+        var  time;
+
+        //公用函数
+        function gongyong(){
+           for (var i=0; i<4; i++) {
+            imgs[i].style.display = "none";
+            lis[i].style.background = "red";          	
+           }
+           imgs[c].style.display = "block";
+           lis[c].style.background = "lightskyblue";         
+        } 
+        //轮播函数
+        function lbt(){
+            c++;
+            if (c == 4) {
+                c = 0;
+            }
+            gongyong();          
+        }
+        //定时器开始
+        time = setInterval(lbt,1000);
+        
+        //点击左按钮
+        left.onclick = function(){
+          c--;
+          if (c < 0) {
+          		c = 3;
+          }
+          gongyong();
+        }
+        //点击右按钮
+        right.onclick = function(){
+        	c++;
+        	if (c == 4) {
+        			c = 0;
+        	}
+          gongyong();
+        }
+        //鼠标进入暂停,离开继续
+        box.onmouseover = function(){
+          clearInterval(time);
+        }
+        box.onmouseout = function(){
+          time = setInterval(lbt,1000);
+        }
+        
+        //li移入事件
+        for (var i=0; i<lis.length; i++) {
+            lis[i].xuhuao = i;
+            lis[i].onmouseover = function(){
+              c = this.xuhuao;
+              clearInterval(time);
+              for (var i=0; i<4; i++) {
+              	imgs[i].style.display = "none";
+              	lis[i].style.background = "red";          	
+              }
+              imgs[c].style.display = "block";
+              lis[c].style.background = "lightskyblue";
+            }
+        }
+    </script>
+	</body>
+</html>

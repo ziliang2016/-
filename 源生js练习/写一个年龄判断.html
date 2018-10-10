@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>js年龄判断</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+      <script type="text/javascript">
+        var $age = prompt("请输入你的年龄");
+        if ($age < 20) {
+        	document.write("孩童");
+        } else if($age <30){
+        	document.write("<h2>你当前属于弱冠之年</h2>");
+        } else if($age < 40){
+          document.write("<h2>你当前属于而立之年</h2>");
+        } else if($age < 50){
+          document.write("<h2>你当前属于不惑之年</h2>");
+        }else if ($age < 60) {
+        	document.write("<h2>你当前属于知天命之年</h2>");
+        } else if($age < 70){
+        	document.write("<h2>你当前属于耳顺之年，也称花甲之年</h2>");
+        }else if($age <80){
+          document.write("<h2>你当前属于古稀之年</h2>");
+        }else if ($age <90) {
+        	document.write("<h2>你当前属于耄耋之年</h2>");
+        } else{
+        	document.write("<h2>你当前属于人仙之年</h2>");
+        }
+      </script>
+      
+	</body>
+</html>

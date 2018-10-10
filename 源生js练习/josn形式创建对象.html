@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>原生形式(josn格式)创建对象</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script type="text/javascript">
+                var  iphoneX = {
+                    color:'土豪金',
+                    jiege:'18000元',
+                    size:'5.5寸',
+                    zhongliang:'200g',
+                    QQ:function(){
+                        alert("可以在线聊天");
+                    },
+                    call:function(){
+                        alert("能打电话");
+                    }
+                };
+                
+                document.write(iphoneX.jiege+"<br />");
+                iphoneX.call();
+		</script>
+	</body>
+</html>

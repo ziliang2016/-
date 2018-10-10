@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>switch判断</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+      <script type="text/javascript">
+          var  $num1 = prompt("请输入第一个数字")*1;
+          var  $con = prompt("请输入运算符号‘例如+、-、*、/等’");
+          var  $num2 = prompt("请输入第二个数字")*1;
+          
+            switch ($con){
+              case "+":
+                  var  $sun = $num1 + $num2;
+                  alert($sun);
+                break;
+              case "-":
+                 var  $sun = $num1 - $num2;
+                 alert($sun);
+                break;
+              case "*":
+                 var  $sun = $num1 * $num2;
+                 alert($sun);                
+                break;
+              case "/":
+                 var  $sun = $num1 / $num2;
+                 alert($sun);              
+                break;
+              case "%":
+                 var  $sun = $num1 % $num2;
+                 alert($sun);              
+                break;                
+              default:
+                alert("你输入的不是运算符号");  
+                break;
+            }
+      </script>
+	</body>
+</html>

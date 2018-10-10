@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>eval从写自定义运算</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+      <script type="text/javascript">
+          var  $num1 = prompt("请输入第一个数字");
+          var  $con = prompt("请输入运算符号‘例如+、-、*、/等’");
+          var  $num2 = prompt("请输入第二个数字");
+          var  $biaodashi = $num1+$con+$num2;
+          var  $jieguo = eval($biaodashi);
+      </script>
+      <p>你输出的表达式为：
+            <script type="text/javascript">
+            	document.write($biaodashi);
+            	document.write("=");
+            	document.write($jieguo);
+            </script>
+      </p>
+	</body>
+</html>
