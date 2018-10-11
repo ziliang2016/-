@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>图片淡入淡出</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery.min.js"></script>
+	</head>
+	<body>
+        <input type="button" id="btn" value="点我隐藏" />
+        <br><br>
+        <img id="pic" src="img/3.jpg" >
+      <script type="text/javascript">
+          $("#btn").click(function(){
+              $("#pic").fadeToggle();
+          })
+      </script>
+	</body>
+</html>
