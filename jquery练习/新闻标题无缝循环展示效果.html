@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>新闻标题无缝循环展示效果</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery.min.js"></script>
+    <style type="text/css">
+    	*{margin: 0; padding: 0;}
+      #box{width: 300px; height: 60px; margin: 40px auto; position: relative; 
+      border: 4px solid red; overflow: hidden; cursor: pointer;}
+      #box ul{position: absolute; top: 0; left: 0;}
+      #box ul li{list-style: none; width: 300px; text-align: center; line-height: 60px;}
+      #box ul li:nth-child(1){background: bisque;}
+      #box ul li:nth-child(2){background: blueviolet;}
+      #box ul li:nth-child(3){background: #FF0000;}
+      #box ul li:nth-child(4){background: #ADFF2F;}
+      #box ul li:nth-child(5){background: bisque;}
+    </style>
+	</head>
+	<body>
+    <div id="box">
+      <ul>
+      	<li>新闻标题无缝循环展示效果1</li>
+        <li>新闻标题无缝循环展示效果2</li>
+        <li>新闻标题无缝循环展示效果3</li>
+        <li>新闻标题无缝循环展示效果4</li>
+        <li>新闻标题无缝循环展示效果1</li>
+      </ul>
+    </div>
+    <script type="text/javascript">
+      var  c = 0;
+      var  timer;
+      timer = setInterval(wfgd,1000)
+      
+      //无缝滚动函数
+      function  wfgd(){
+          c++;
+          if (c == 5) {
+          		$("#box ul").css({"top":"0"});
+              c = 1;
+          }
+          var  top = c*-60;
+          $("#box ul").animate({"top":top+"px"},500);        
+      }
+      
+      //鼠标移入清除定时器
+      $("#box").mouseenter(function(){
+          clearInterval(timer);
+      })
+      
+      //鼠标移出继续定时器
+      $("#box").mouseleave(function(){
+      	  timer = setInterval(wfgd,1000)
+      })
+    </script>
+	</body>
+</html>
