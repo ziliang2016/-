@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>固定导航效果</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery.min.js"></script>
+    <style type="text/css">
+    	*{margin: 0; padding: 0;}
+      img{display: block; margin: 0 auto;}
+      .nav_f{position:fixed; top:0; left:50%; margin-left:-481px;}
+    </style>
+	</head>
+	<body>
+      <img src="img/header.jpg" >
+      <img src="img/nav.jpg" id="nav">
+      <img src="img/footer.jpg" >
+      <script type="text/javascript">
+          $(window).scroll(function(){
+              var  top = $(document).scrollTop();
+              if ( top> 240) {
+                $("#nav").addClass("nav_f");
+              }else{
+                  $("#nav").removeClass("nav_f");
+              }
+          });
+      </script>
+	</body>
+</html>
